@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+
+
+# Original xBD dataset directories (referenced by scripts)
+../../train/
+../../test/
+../../hold/
+
+# Preprocessed patches 
+01_training/data_prep/patched_dataset_unified/images/
+02_inference/data_prep_test/patched_dataset_test/images/
+
+# HDF5 datasets 
+*.hdf5
+*.h5
+
+
+# Model checkpoints 
+*.pth
+*.pt
+
+# Training results 
+01_training/results/
+
+# Predictions CSV
+02_inference/results/
+
+# LIME analysis results
+04_explainability/test/LIME/xai_results/
+
+# LIME explanation images
+*_lime_analysis.png
+gradcam_analysis_*.png
+gradcam_plus_analysis_*.png
+lime_analysis_*.png
+
+
+# Logs
+*.log
+*.txt
+!requirements.txt
+
+# Plots
+*.png
+*.jpg
+!README_images/*.png
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Catalog CSVs 
+!xbd_catalog_with_folds.csv
+!xbd_train_catalog_enriched.csv
+!xbd_train_val_catalog_enriched.csv
+!xbd_train_val_catalog.csv
+!xbd_test_catalog.csv
+!stratification_quality_report.txt
