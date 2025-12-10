@@ -54,7 +54,6 @@ This project implements a Deep Learning system for automatic building damage ass
 - **LIME** (Local Interpretable Model-agnostic Explanations)
   - Single-sample and batch analysis
   - Validation metrics: Insertion/Deletion AUC
-  - Model comparison
 - **Analysis by disaster type** (6 types: flooding, wind, earthquake, tsunami, volcanic eruption, wildfire)
 - **Visualizations** with superpixel heatmaps
 
@@ -104,14 +103,6 @@ cd xbd-siamese-damage-assessment/xbd/phyton
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
-```
-
-### 4. Verify GPU installation (optional)
-```python
-import torch
-print(f"CUDA available: {torch.cuda.is_available()}")
-print(f"CUDA version: {torch.version.cuda}")
-print(f"GPU: {torch.cuda.get_device_name(0)}")
 ```
 
 ## Dataset
@@ -198,7 +189,7 @@ Edit `core/config.py` (`TrainingConfig` class):
 
 ```python
 # BACKBONE
-self.backbone_name = 'convnext_small'  # or 'resnet50', 'efficientnet_b0', etc.
+self.backbone_name = 'convnext_small'  
 self.use_timm = False  # True for ImageNet-22K, False for ImageNet-1K
 
 # HYPERPARAMETERS
@@ -244,7 +235,7 @@ results/exp_YYYYMMDD_HHMMSS/
 
 ### 3. Inference
 
-#### a) Ensemble (recommended)
+#### a) Ensemble 
 Uses all 5 fold models for more robust predictions.
 
 ```bash
@@ -305,7 +296,7 @@ TARGET_CLASS_INDEX = None  # None = predicted class, 0-3 = specific class
 
 # LIME PARAMETERS
 NUM_SAMPLES = 2000  # Perturbations
-NUM_FEATURES = 100  # Top superpixels
+NUM_FEATURES = 100  # for visualization 
 USE_STRATIFICATION = True  # Stratified sampling
 ```
 
